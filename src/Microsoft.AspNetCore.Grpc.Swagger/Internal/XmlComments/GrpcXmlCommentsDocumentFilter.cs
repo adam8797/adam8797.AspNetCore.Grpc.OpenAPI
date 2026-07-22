@@ -59,16 +59,26 @@ internal sealed class GrpcXmlCommentsDocumentFilter : IDocumentFilter
             var summaryNode = typeNode.SelectSingleNode(SummaryTag);
             if (summaryNode != null)
             {
-                if (swaggerDoc.Tags == null)
-                {
-                    swaggerDoc.Tags = new HashSet<OpenApiTag>();
-                }
+                var description = XmlCommentsTextHelper.Humanize(summaryNode.InnerXml);
 
-                swaggerDoc.Tags.Add(new OpenApiTag
+                swaggerDoc.Tags ??= new HashSet<OpenApiTag>();
+
+                // The tag is usually already present, created from the operations' tags.
+                // Tags is a name-keyed set, so Add would be silently rejected and the
+                // description lost - update the existing tag instead.
+                var existingTag = swaggerDoc.Tags.FirstOrDefault(t => t.Name == nameAndType.Key);
+                if (existingTag != null)
                 {
-                    Name = nameAndType.Key,
-                    Description = XmlCommentsTextHelper.Humanize(summaryNode.InnerXml)
-                });
+                    existingTag.Description = description;
+                }
+                else
+                {
+                    swaggerDoc.Tags.Add(new OpenApiTag
+                    {
+                        Name = nameAndType.Key,
+                        Description = description
+                    });
+                }
             }
             return true;
         }
