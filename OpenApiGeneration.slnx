@@ -1,0 +1,4 @@
+<Solution>
+  <Project Path="src/Microsoft.AspNetCore.Grpc.Swagger/Microsoft.AspNetCore.Grpc.Swagger.csproj" />
+  <Project Path="src/Shared/Shared.shproj" Id="52de58bf-dc0d-4de0-926f-3296d85e8567" />
+</Solution>
