@@ -1,0 +1,26 @@
+syntax = "proto3";
+
+option csharp_namespace = "HelloTranscoding";
+
+package greet;
+
+import "google/api/annotations.proto";
+
+// A tiny greeting service.
+service Greeter {
+  // Maps this RPC onto: GET /v1/greeter/{name}
+  // The {name} segment binds to HelloRequest.name.
+  rpc SayHello (HelloRequest) returns (HelloReply) {
+    option (google.api.http) = {
+      get: "/v1/greeter/{name}"
+    };
+  }
+}
+
+message HelloRequest {
+  string name = 1;
+}
+
+message HelloReply {
+  string message = 1;
+}

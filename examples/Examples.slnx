@@ -1,0 +1,4 @@
+<Solution>
+  <Project Path="../src/Grpc.Community.SwaggerGen/Grpc.Community.SwaggerGen.csproj" />
+  <Project Path="HelloTranscoding.Swagger/HelloTranscoding.Swagger.csproj" />
+</Solution>
