@@ -1,0 +1,9 @@
+<Solution>
+  <Folder Name="/src/">
+    <Project Path="src/Community.Grpc.SwaggerGen/Community.Grpc.SwaggerGen.csproj" />
+    <Project Path="src/Shared/Shared.shproj" Id="52de58bf-dc0d-4de0-926f-3296d85e8567" />
+  </Folder>
+  <Folder Name="/test/">
+    <Project Path="test/Community.Grpc.SwaggerGen.Tests/Community.Grpc.SwaggerGen.Tests.csproj" />
+  </Folder>
+</Solution>

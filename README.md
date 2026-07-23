@@ -1,4 +1,4 @@
-# Grpc.Community.OpenApi
+# Community.Grpc.OpenApi
 
 In [this commit](https://github.com/dotnet/aspnetcore/commit/39e1ac975cf138c56fff984dd824ab651a448367) Microsoft removed the `Microsoft.AspNetCore.Grpc.Swagger` package. Some of us used it, and others of us had plans to use it.
 
@@ -17,6 +17,6 @@ You'll find examples in the `examples/` directory, this library is generally a o
 
 # Status
 
-I've freshly copied the code and made the needed modifications to build. There's a few kinks to iron out, but I plan on trying to get the Swagger-based package published as `Grpc.Community.SwaggerGen` soon™
+I've freshly copied the code and made the needed modifications to build. There's a few kinks to iron out, but I plan on trying to get the Swagger-based package published as `Community.Grpc.SwaggerGen` soon™
 
-After that, I'll see about porting it to OpenApi, and then we'll publish `Grpc.Community.OpenApi` as a separate package. 
+After that, I'll see about porting it to OpenApi, and then we'll publish `Community.Grpc.OpenApi` as a separate package. 

@@ -21,7 +21,7 @@
 	</ItemGroup>
 
 	<ItemGroup>
-		<ProjectReference Include="..\..\src\Grpc.Community.SwaggerGen\Grpc.Community.SwaggerGen.csproj" />
+		<ProjectReference Include="..\..\src\Community.Grpc.SwaggerGen\Community.Grpc.SwaggerGen.csproj" />
 	</ItemGroup>
 
 </Project>

@@ -18,8 +18,8 @@ env:
   DOTNET_CLI_TELEMETRY_OPTOUT: true
   DOTNET_SKIP_FIRST_TIME_EXPERIENCE: true
   CONFIGURATION: Release
-  SOLUTION: Grpc.Community.OpenApi.slnx
-  PACKAGE_PROJECT: src/Grpc.Community.SwaggerGen/Grpc.Community.SwaggerGen.csproj
+  SOLUTION: Community.Grpc.OpenApi.slnx
+  PACKAGE_PROJECT: src/Community.Grpc.SwaggerGen/Community.Grpc.SwaggerGen.csproj
 
 jobs:
   build:
@@ -63,7 +63,7 @@ jobs:
       - name: Upload package artifact
         uses: actions/upload-artifact@v4
         with:
-          name: nupkg
+          name: Community.Grpc.SwaggerGen.${{ steps.version.outputs.version }}.nupkg
           path: artifacts/*.nupkg
           if-no-files-found: error
 

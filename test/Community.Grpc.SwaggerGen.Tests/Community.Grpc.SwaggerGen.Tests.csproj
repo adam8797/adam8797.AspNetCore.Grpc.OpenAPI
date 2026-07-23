@@ -1,0 +1,39 @@
+<Project Sdk="Microsoft.NET.Sdk">
+	<PropertyGroup>
+		<TargetFramework>net10.0</TargetFramework>
+		<OutputType>Exe</OutputType>
+		<!-- Route 'dotnet test' through Microsoft.Testing.Platform, which xunit.v3 uses. -->
+		<TestingPlatformDotnetTestSupport>true</TestingPlatformDotnetTestSupport>
+		<GenerateDocumentationFile>true</GenerateDocumentationFile>
+		<NoWarn>$(NoWarn);CS1591</NoWarn>
+		<ImplicitUsings>enable</ImplicitUsings>
+	</PropertyGroup>
+
+	<ItemGroup>
+		<Using Include="Xunit" />
+		<Using Include="Microsoft.OpenApi" />
+	</ItemGroup>
+
+	<ItemGroup>
+		<PackageReference Include="Grpc.Tools" Version="2.82.0">
+			<PrivateAssets>all</PrivateAssets>
+			<IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
+		</PackageReference>
+		<PackageReference Include="xunit.v3" Version="3.2.2" />
+		<PackageReference Include="Swashbuckle.AspNetCore" Version="10.2.3" />
+	</ItemGroup>
+
+	<ItemGroup>
+		<ProjectReference Include="..\..\src\Community.Grpc.SwaggerGen\Community.Grpc.SwaggerGen.csproj" />
+	</ItemGroup>
+
+	<ItemGroup>
+		<Protobuf Include="Proto\counter.proto" GrpcServices="Both" />
+		<Protobuf Include="Proto\body.proto" GrpcServices="Both" />
+		<Protobuf Include="Proto\responsebody.proto" GrpcServices="Both" />
+		<Protobuf Include="Proto\parameters.proto" GrpcServices="Both" />
+		<Protobuf Include="Proto\xmldoc.proto" GrpcServices="Both" />
+		<Protobuf Include="Proto\greeter.proto" GrpcServices="Both" />
+		<Protobuf Include="Proto\messages.proto" GrpcServices="Both" />
+	</ItemGroup>
+</Project>

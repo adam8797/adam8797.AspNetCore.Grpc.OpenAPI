@@ -1,6 +1,6 @@
 # HelloTranscoding
 
-The smallest possible app that uses **Grpc.Community.SwaggerGen**: one gRPC
+The smallest possible app that uses **Community.Grpc.SwaggerGen**: one gRPC
 service whose `google.api.http` annotation turns it into a REST endpoint, with a
 Swagger UI generated from the `.proto`.
 
