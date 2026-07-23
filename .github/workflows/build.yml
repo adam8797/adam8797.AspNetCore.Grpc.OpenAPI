@@ -58,11 +58,7 @@ jobs:
           echo "Package version: $VERSION"
 
       - name: Pack
-        run: >
-          dotnet pack ${{ env.PACKAGE_PROJECT }}
-          -c ${{ env.CONFIGURATION }}
-          -p:Version=${{ steps.version.outputs.version }}
-          -o ${{ github.workspace }}/artifacts
+        run: dotnet pack ${{ env.PACKAGE_PROJECT }} -c ${{ env.CONFIGURATION }} -p:Version=${{ steps.version.outputs.version }} -o ${{ github.workspace }}/artifacts
 
       - name: Upload package artifact
         uses: actions/upload-artifact@v4
@@ -72,10 +68,10 @@ jobs:
           if-no-files-found: error
 
   publish:
-    name: Publish to NuGet.org (Trusted Publishing)
+    name: Publish to NuGet.org
     needs: build
     runs-on: ubuntu-latest
-    if: ${{ github.event_name == 'release' && vars.NUGET_PUBLISH_ENABLED == 'true' }}
+    if: ${{ github.event_name == 'release' }}
     environment: nuget
     permissions:
       id-token: write
@@ -92,15 +88,11 @@ jobs:
         with:
           dotnet-version: 10.0.x
 
-      - name: NuGet login (Trusted Publishing → short-lived API key)
+      - name: NuGet login
         uses: NuGet/login@v1
         id: nuget-login
         with:
           user: ${{ vars.NUGET_USER }}
 
       - name: Push to NuGet.org
-        run: >
-          dotnet nuget push "artifacts/*.nupkg"
-          --api-key ${{ steps.nuget-login.outputs.NUGET_API_KEY }}
-          --source https://api.nuget.org/v3/index.json
-          --skip-duplicate
+        run: dotnet nuget push "artifacts/*.nupkg" --api-key ${{ steps.nuget-login.outputs.NUGET_API_KEY }} --source https://api.nuget.org/v3/index.json --skip-duplicate
