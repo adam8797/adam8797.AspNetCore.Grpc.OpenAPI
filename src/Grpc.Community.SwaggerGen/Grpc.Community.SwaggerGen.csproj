@@ -1,14 +1,27 @@
 <Project Sdk="Microsoft.NET.Sdk">
 	<PropertyGroup>
 		<TargetFramework>net10.0</TargetFramework>
-		<Description>Swagger for gRPC ASP.NET Core</Description>
-		<PackageTags>gRPC RPC HTTP/2 REST Swagger OpenAPI</PackageTags>
 		<ImplicitUsings>enable</ImplicitUsings>
+		<PackageId>Grpc.Community.SwaggerGen</PackageId>
+		<Description>Swagger / OpenAPI document generation for gRPC JSON transcoding on ASP.NET Core, built on Swashbuckle. A community continuation of the discontinued Microsoft.AspNetCore.Grpc.Swagger package.</Description>
+		<Authors>Adam Schiavone</Authors>
+		<Copyright>Copyright (c) 2026 Adam Schiavone</Copyright>
+		<PackageTags>gRPC;RPC;HTTP2;REST;Swagger;OpenAPI;Swashbuckle;transcoding;aspnetcore</PackageTags>
+		<PackageLicenseExpression>MIT</PackageLicenseExpression>
+		<PackageReadmeFile>README.md</PackageReadmeFile>
+		<PackageProjectUrl>https://github.com/adam8797/adam8797.AspNetCore.Grpc.OpenAPI</PackageProjectUrl>
+		<RepositoryUrl>https://github.com/adam8797/adam8797.AspNetCore.Grpc.OpenAPI.git</RepositoryUrl>
+		<RepositoryType>git</RepositoryType>
+		<PublishRepositoryUrl>true</PublishRepositoryUrl>
 	</PropertyGroup>
 
 	<ItemGroup>
 		<Using Include="Microsoft.OpenApi" />
 		<InternalsVisibleTo Include="Grpc.Community.SwaggerGen.Tests" />
+	</ItemGroup>
+
+	<ItemGroup>
+		<None Include="..\..\README.md" Pack="true" PackagePath="\" />
 	</ItemGroup>
 
 	<ItemGroup>
