@@ -6,6 +6,11 @@ This repo is meant to continue the life of that package, and even port it to Ope
 
 The initial commit will be the extracted code, verbatim. You can follow through the commit history to see whats been modified.
 
+# Notes
+Best I can tell, the source libraries were targeting `Microsoft.OpenApi 1.0`. I've made the choice to start with .NET 10 support, so I bumped `Microsoft.OpenApi` to the latest 2.x and made the relevant change to support that.
+
+When .NET 11 ships, I'll multitarget and support `Microsoft.OpenApi 3.0`, but that may just be for the OpenApi version of the package, we'll see when we get there.
+
 # Examples
 
 You'll find examples in the `examples/` directory, this library is generally a one-liner to get added.
