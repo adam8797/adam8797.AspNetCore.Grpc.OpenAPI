@@ -1,9 +1,11 @@
 <Solution>
   <Folder Name="/src/">
+    <Project Path="src/Grpc.Community.OpenApi/Grpc.Community.OpenApi.csproj" />
     <Project Path="src/Grpc.Community.SwaggerGen/Grpc.Community.SwaggerGen.csproj" />
     <Project Path="src/Shared/Shared.shproj" Id="52de58bf-dc0d-4de0-926f-3296d85e8567" />
   </Folder>
   <Folder Name="/test/">
+    <Project Path="test/Grpc.Community.OpenApi.Tests/Grpc.Community.OpenApi.Tests.csproj" />
     <Project Path="test/Grpc.Community.SwaggerGen.Tests/Grpc.Community.SwaggerGen.Tests.csproj" />
   </Folder>
 </Solution>
