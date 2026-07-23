@@ -80,7 +80,8 @@ jobs:
       - name: Download package artifact
         uses: actions/download-artifact@v4
         with:
-          name: Community.Grpc.SwaggerGen.${{ steps.version.outputs.version }}.nupkg
+          pattern: Community.Grpc.SwaggerGen.*.nupkg
+          merge-multiple: true
           path: artifacts
 
       - name: Setup .NET
